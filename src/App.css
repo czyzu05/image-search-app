@@ -5,40 +5,21 @@
 }
 
 body {
-  background-color: darkgray;
+  min-height: 100vh;
+  background:linear-gradient( #84fab0, #8fd3f4);
 }
 
-.main {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  width: 400px;
-  height: 55px;
-  background-color: #fff;
-  border-radius: 30px;
-  border: 1px solid black;
-  display: flex;
+.container {
+  height: 70vh;
+  display:flex;
+  flex-direction: column;
   align-items: center;
-  padding: 15px;
+  justify-content: center;
 }
 
-div.main:focus-within {
-  border: 1px solid red;
-}
-
-.fa-search {
-  font-size: 22px;
-  color: #777;
-}
-
-input {
-  flex: 1;
-  border: 3px solid #32e17c;
-  height: 40px;
-  font-size: 18px;
-  outline: none;
-  border: none;
-  padding-left: 15px;
+.title {
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+  color: #00203FFF;
 }

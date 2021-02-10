@@ -1,0 +1,29 @@
+.main {
+    width: 500px;
+    height: 60px;
+    background-color: #fff;
+    border-radius: 30px;
+    border: 4px solid white;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+  }
+
+  div.main:focus-within {
+    border: 4px solid #00203FFF;
+  }
+
+  .fa-search {
+    font-size: 22px;
+    color: #777;
+  }
+
+  input {
+    flex: 1;
+    border: 3px solid #32e17c;
+    height: 40px;
+    font-size: 18px;
+    outline: none;
+    border: none;
+    padding-left: 15px;
+  }
