@@ -1,8 +1,9 @@
 import React, { useState, useContext } from "react";
+import { withRouter } from 'react-router-dom';
 import { ImagesContext } from "../../ImagesContext";
 import "./SearchBar.css";
 
-const SearchBar = () => {
+const SearchBar = ({history}) => {
   const { setSearchPhrase } = useContext(ImagesContext);
   const [inputValue, setInputValue] = useState("");
 
@@ -14,6 +15,7 @@ const SearchBar = () => {
     e.preventDefault();
     setSearchPhrase(inputValue);
     setInputValue("")
+    history.push('/search-results');
   };
 
   return (
@@ -31,4 +33,4 @@ const SearchBar = () => {
   );
 };
 
-export default SearchBar;
+export default withRouter(SearchBar);

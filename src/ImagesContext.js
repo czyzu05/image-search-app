@@ -21,6 +21,6 @@ export const ImagesProvider = ({ children }) => {
   }, [searchPhrase]);
 
   return (
-    <ImagesContext.Provider value={{images, setSearchPhrase}}>{children}</ImagesContext.Provider>
+    <ImagesContext.Provider value={{images, setSearchPhrase, searchPhrase}}>{children}</ImagesContext.Provider>
   );
 };
