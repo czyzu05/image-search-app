@@ -1,0 +1,10 @@
+.imgsContainer {
+    margin-top: 25px;
+    width: 100%;
+    min-height: 700px;
+
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}

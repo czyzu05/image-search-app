@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { ImagesContext } from "../../ImagesContext";
+import TagItem from "../TagItem/TagItem";
 import "./TagsBar.css";
 
 const TagsBar = () => {
@@ -8,17 +9,16 @@ const TagsBar = () => {
   let allTags = [];
 
   images.map((image) => {
-    return allTags.push(...image.tags.map((tag) => tag.title))
+    return allTags.push(...image.tags.map((tag) => tag.title));
   });
 
   const tagsWithoutDuplicates = [...new Set(allTags)];
 
-  console.log(tagsWithoutDuplicates);
   return (
     <div className="tagsContainer">
-      <ul>
-        tagsWithoutDuplicates
-      </ul>
+      {tagsWithoutDuplicates.map((tag) => (
+        <TagItem tag={tag} key={tag} />
+      ))}
     </div>
   );
 };

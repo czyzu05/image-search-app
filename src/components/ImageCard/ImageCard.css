@@ -1,0 +1,18 @@
+.imgCardContainer {
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.img {
+    width: 400px;
+    height: 270px;
+}
+
+.tags {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

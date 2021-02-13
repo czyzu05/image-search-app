@@ -19,8 +19,8 @@ const SearchBar = ({history}) => {
   };
 
   return (
-    <form onSubmit={handleFormSubmit}>
-      <div className="main">
+    <form onSubmit={handleFormSubmit} className="main-form">
+      <div className="formWrapper">
         <i className="fa fa-search"></i>
         <input
           type="text"

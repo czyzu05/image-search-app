@@ -6,6 +6,7 @@ export const ImagesContext = createContext();
 export const ImagesProvider = ({ children }) => {
   const [searchPhrase, setSearchPhrase] = useState("")
   const [images, setImages] = useState([]);
+  const [showModal, setShowModal] = useState(false)
 
   useEffect(() => {
     const rootAPI = "https://api.unsplash.com";
@@ -15,12 +16,14 @@ export const ImagesProvider = ({ children }) => {
       .get(`${rootAPI}/search/photos?client_id=${apiKey}`, {
         params: {
           query: {searchPhrase},
+          orientation: "landscape",
+          per_page: 12
         },
       })
       .then((res) => setImages(res.data.results));
   }, [searchPhrase]);
 
   return (
-    <ImagesContext.Provider value={{images, setSearchPhrase, searchPhrase}}>{children}</ImagesContext.Provider>
+    <ImagesContext.Provider value={{images, setSearchPhrase, searchPhrase, showModal, setShowModal}}>{children}</ImagesContext.Provider>
   );
 };
