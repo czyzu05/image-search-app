@@ -4,9 +4,10 @@ import axios from "axios";
 export const ImagesContext = createContext();
 
 export const ImagesProvider = ({ children }) => {
-  const [searchPhrase, setSearchPhrase] = useState("")
+  const [searchPhrase, setSearchPhrase] = useState("");
   const [images, setImages] = useState([]);
-  const [showModal, setShowModal] = useState(false)
+  const [showModal, setShowModal] = useState(false);
+  const [activeImg, setActiveImg] = useState(null);
 
   useEffect(() => {
     const rootAPI = "https://api.unsplash.com";
@@ -15,15 +16,27 @@ export const ImagesProvider = ({ children }) => {
     axios
       .get(`${rootAPI}/search/photos?client_id=${apiKey}`, {
         params: {
-          query: {searchPhrase},
+          query: { searchPhrase },
           orientation: "landscape",
-          per_page: 12
+          per_page: 12,
         },
       })
       .then((res) => setImages(res.data.results));
   }, [searchPhrase]);
 
   return (
-    <ImagesContext.Provider value={{images, setSearchPhrase, searchPhrase, showModal, setShowModal}}>{children}</ImagesContext.Provider>
+    <ImagesContext.Provider
+      value={{
+        images,
+        setSearchPhrase,
+        searchPhrase,
+        showModal,
+        setShowModal,
+        activeImg,
+        setActiveImg,
+      }}
+    >
+      {children}
+    </ImagesContext.Provider>
   );
 };
